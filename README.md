@@ -16,4 +16,13 @@
 
 # CTE
 ## Definition
-- Stand for `Common Table Expression`
+- Stand for `Common Table Expression`. It's help us to make a temp name for query's result. That we can use in next query. By using `CTE`. We can divide a complex query into many simple query, easier in manage and maintain. And just can use `one time in one query`.
+
+    ![alt text](image.png)
+
+```sql
+Planning Time: 0.042 ms
+Execution Time: 132.953 ms
+```
+
+
