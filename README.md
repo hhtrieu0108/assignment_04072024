@@ -18,7 +18,7 @@
 ## Definition
 - Stand for `Common Table Expression`. It's help us to make a temp name for query's result. That we can use in next query. By using `CTE`. We can divide a complex query into many simple query, easier in manage and maintain. And just can use `one time in one query`.
 
-    ![alt text](image.png)
+    ![alt text](CTEs.png)
 
 ## Syntax
 ```sql
@@ -42,7 +42,7 @@ Execution Time: 132.953 ms
 - Security and can reuse in many situation
 - It exist in view table
 
-    ![alt text](image-1.png)
+    ![alt text](View.png)
 
 ## Syntax
 ```sql
@@ -65,7 +65,7 @@ Execution Time: 141.640 ms
 - Will auto deleted after the session or transaction finished
 - Use for store result during the session
 
-    ![alt text](image-2.png)
+    ![alt text](temp-table.png)
 
 ## Syntax
 ```sql
@@ -93,7 +93,7 @@ Execution Time: 90.409 ms
 - A variable in SQL Server only. Is stored a set of data into table
 - Just exist during batch, stored procedure or function where it declare
 
-    ![alt text](image-3.png)
+    ![alt text](table-variable.png)
 
 ## Syntax
 ```sql
@@ -138,7 +138,7 @@ Completion time: 2024-07-09T10:40:59.8648766+07:00
 - A function return table from a query
 - Can use with select, join, where and aggregation like a real table
 
-    ![alt text](image-4.png)
+    ![alt text](tvfs.png)
 
 ## Syntax
 ```sql
