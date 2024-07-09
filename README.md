@@ -138,44 +138,47 @@ Completion time: 2024-07-09T10:40:59.8648766+07:00
 - A variable in SQL Server only. Is stored a set of data into table
 - Just exist during batch, stored procedure or function where it declare
 
-    ![alt text](image-3.png)
+    ![alt text](image-4.png)
 
 ## Syntax
 ```sql
-DECLARE @table_variable_name TABLE (
-    column1 datatype,
-    column2 datatype,
+
+-- SQL SERVER
+CREATE FUNCTION function_name
+(
+    @parameter1 data_type,
+    @parameter2 data_type,
     ...
+)
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT column1, column2, ...
+    FROM table_name
+    WHERE condition
 );
 
-INSERT INTO @table_variable_name (column1, column2)
-SELECT column1, column2
-FROM table
-WHERE condition;
+-- POSTGRES
+CREATE OR REPLACE FUNCTION function_name(variable type)
+RETURNS TABLE(column1 type, column2 type) AS $$
+BEGIN
+	RETURN QUERY
+    SELECT tb.column1, tb.column2
+    FROM table tb
+    WHERE condition = variable
+END;
+$$ LANGUAGE plpgsql;
+
+SELECT * FROM function_name(variable);
+
 ```
 
 ## Time
 
 ```sql
-SQL Server parse and compile time: 
-   CPU time = 0 ms, elapsed time = 1 ms.
-
- SQL Server Execution Times:
-   CPU time = 1156 ms,  elapsed time = 1147 ms.
-
-(1048567 rows affected)
-SQL Server parse and compile time: 
-   CPU time = 0 ms, elapsed time = 0 ms.
-
-(1048567 rows affected)
-
- SQL Server Execution Times:
-   CPU time = 265 ms,  elapsed time = 3247 ms.
-
- SQL Server Execution Times:
-   CPU time = 0 ms,  elapsed time = 0 ms.
-
-Completion time: 2024-07-09T10:40:59.8648766+07:00
+Planning Time: 0.020 ms
+Execution Time: 278.955 ms
 ```
 
 
