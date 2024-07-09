@@ -1,7 +1,7 @@
 # Tìm hiểu kĩ để so sánh CTE, View, Temp Table, Table Variable, Inline TVFs
 
 # TABLE OF CONTENTS
-1. [CTE](#cte)
+1. [CTEs](#ctes)
 2. [View](#view)
 3. [Temporary Table](#temp-table)
 4. [Table Variable](#table-variable)
@@ -9,12 +9,12 @@
 6. [Conclusion](#conclusion)
 
 # Dataset Summary
-- `Dataset` : Banking_Transactions
+- `Dataset` : ***Banking_Transactions***
 
-- `Number of columns` : 9
-- `Number of rows` : 1.048.567
+- `Number of columns` : ***9***
+- `Number of rows` : ***1.048.567***
 
-# <span id ="cte">CTE</span>
+# <span id ="ctes">CTEs</span>
 ## Definition
 - Stand for `Common Table Expression`. It's help us to make a temp name for query's result. That we can use in next query. By using `CTE`. We can divide a complex query into many simple query, easier in manage and maintain. And just can use `one time in one query`.
 
@@ -135,8 +135,8 @@ Completion time: 2024-07-09T10:40:59.8648766+07:00
 
 # <span id ="tvfs">Inline TVFs</span>
 ## Definition
-- A variable in SQL Server only. Is stored a set of data into table
-- Just exist during batch, stored procedure or function where it declare
+- A function return table from a query
+- Can use with select, join, where and aggregation like a real table
 
     ![alt text](image-4.png)
 
@@ -180,5 +180,16 @@ SELECT * FROM function_name(variable);
 Planning Time: 0.020 ms
 Execution Time: 278.955 ms
 ```
+
+# <span id="conclusion">Conclusion</span>
+- **Use Cases**:
+    - `CTEs`: Divide and conquer complex queries, enhancing readability.
+    - `Views`: Provide security, simplify query logic, and promote data abstraction.
+    - `Temporary Tables`: Store and manipulate intermediate data within sessions or transactions.
+    - `Table Variables`: Hold temporary data within procedural logic in SQL Server.
+    - `Inline TVFs`: Modularize queries, encapsulate logic, and perform complex data transformations.
+- **Performance Considerations**:
+    - Each has its own performance characteristics based on the query complexity, dataset size, and indexing strategies.
+    - Choosing the right tool depends on the specific use case and performance requirements.
 
 
